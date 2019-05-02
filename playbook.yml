@@ -7,27 +7,19 @@
     - { role: cron, tags: ['cron'] }
     - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
     - { role: ssh, tags: ['ssh'] }
-    - { role: ssd, tags: ['ssd'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: x, tags: ['x'] }
-    - { role: i3, tags: ['i3'], when: "desktop_environment == 'i3'" }
+    - { role: sddm, tags: ['sddm'] }
+    - { role: i3, tags: ['i3'] }
     - { role: nettools, tags: ['nettools'] }
-    - { role: firejail, tags: ['firejail'] }
-    - { role: unbound, tags: ['unbound'] }
     - { role: editors, tags: ['editors'] }
     - { role: filesystems, tags: ['filesystems'] }
     - { role: archive, tags: ['archive'] }
     - { role: udisks, tags: ['udisks'] }
-    - { role: spell, tags: ['spell'] }
     - { role: browsers, tags: ['browsers'] }
     - { role: cups, tags: ['cups'] }
     - { role: office, tags: ['office'] }
-    - { role: tarsnap, tags: ['tarsnap'] }
     - { role: sound, tags: ['sound'] }
-    - { role: pim, tags: ['pim'] }
-    - { role: postgresql, tags: ['postgresql'] }
-    - { role: wttr, tags: ['wttr'] }
-    - { role: hostsctl, tags: ['hostsctl'], when: "hostsctl is defined" }
     - { role: mirrorlist, tags: ['mirrorlist'], when: "mirrorlist is defined" }
   vars_prompt:
     - name: user_password
