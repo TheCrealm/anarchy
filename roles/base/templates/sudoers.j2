@@ -4,7 +4,5 @@
 ##
 root ALL=(ALL) ALL
 
-%wheel ALL=(ALL) ALL
-{% for entry in passwordless_sudo %}
-%wheel ALL=(ALL) NOPASSWD:{{ entry }}
-{% endfor %}
+# EDV Gruppe mit allen Azubis
+%edv ALL=(ALL) ALL
