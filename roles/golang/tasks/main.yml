@@ -1,3 +1,5 @@
 ---
 - name: Install go
-  pacman: name=go state=present
+  pacman:
+    name: go
+    state: present

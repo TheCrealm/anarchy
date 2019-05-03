@@ -13,18 +13,25 @@
     state: present
 
 - name: Add a print admin group
-  group: name=printadmin state=present
+  group:
+    name: printadmin
+    state: present
 
 - name: Allow the print admin group to administer CUPS
-  lineinfile: dest=/etc/cups/cups-files.conf
-              regexp=^SystemGroup
-              state=present
-              line="SystemGroup sys root printadmin"
+  lineinfile: 
+    dest: /etc/cups/cups-files.conf
+    regexp: ^SystemGroup
+    state: present
+    line: "SystemGroup sys root printadmin"
   notify:
     - restart cups
 
 - name: Enable and start CUPS
-  service: name=org.cups.cupsd.service enabled=yes state=started
+  service:
+    name: org.cups.cupsd.service
+    enabled: yes
+    state: started
+
 
 # TODO: Test this and examine how it works
 #  

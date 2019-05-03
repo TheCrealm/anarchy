@@ -1,3 +1,10 @@
+base:
+    sudo:
+        enabled: False
+        group: edv
+
+
+
 hostname: nous
 
 aur:
