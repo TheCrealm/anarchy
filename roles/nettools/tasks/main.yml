@@ -1,21 +1,35 @@
 ---
 - name: Install MTR
-  pacman: name=mtr state=present
+  pacman: 
+    name: mtr 
+    state: present
 
 - name: Install net-tools
-  pacman: name=net-tools state=present
+  pacman: 
+    name: net-tools 
+    state: present
 
 - name: Install bind-tools
-  pacman: name=bind-tools state=present
+  pacman: 
+    name: bind-tools 
+    state: present
 
 - name: Install netcat
-  pacman: name=gnu-netcat state=present
+  pacman: 
+    name: gnu-netcat 
+    state: present
 
 - name: Install nmap
-  pacman: name=nmap state=present
+  pacman: 
+    name: nmap 
+    state: present
 
 - name: Install tcpdump
-  pacman: name=tcpdump state=present
+  pacman: 
+    name: tcpdump 
+    state: present
 
 - name: Install socat
-  pacman: name=socat state=present
+  pacman: 
+    name: socat 
+    state: present

@@ -1,15 +1,23 @@
 ---
 - name: Install Xorg
-  pacman: name=xorg-server state=present
+  pacman: 
+    name: xorg-server 
+    state: present
 
 - name: Install Xinit
-  pacman: name=xorg-xinit state=present
+  pacman: 
+    name: xorg-xinit 
+    state: present
 
 - name: Install xmodmap
-  pacman: name=xorg-xmodmap state=present
+  pacman: 
+    name: xorg-xmodmap 
+    state: present
 
 - name: Install xev
-  pacman: name=xorg-xev state=present
+  pacman: 
+    name: xorg-xev 
+    state: present
 
 - name: Install video driver(s)
   pacman:
@@ -17,7 +25,9 @@
     state: present
 
 - name: Remap mouse buttons
-  template: src=30-button_mapping.conf dest=/etc/X11/xorg.conf.d/30-button_mapping.conf
+  template: 
+    src: 30-button_mapping.conf 
+    dest: /etc/X11/xorg.conf.d/30-button_mapping.conf
   when: libinput.button_mapping is defined
   tags:
     - libinput
