@@ -1,0 +1,6 @@
+---
+- name: Install systemd-resolved
+  pacman:
+    name: systemd-resovled
+    state: present
+  tags: "resolve"

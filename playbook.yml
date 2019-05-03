@@ -21,6 +21,11 @@
     - { role: office, tags: ['office'] }
     - { role: sound, tags: ['sound'] }
     - { role: mirrorlist, tags: ['mirrorlist'], when: "mirrorlist is defined" }
+   
+    - { role: systemd-networkd, tags: ['network'], when: "network.type == 'networkd'" }
+    - { role: networkmanager, tags: ['network'], when: "network.type == 'networkmanager'" }
+    
+    - { role: systemd-resolved, tags: ['network'] }
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"

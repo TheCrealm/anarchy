@@ -1,0 +1,15 @@
+---
+- name: Install systemd-networkd
+  pacman:
+    name: systemd-networkd
+    state: present
+  tags: "network"
+
+- include: profiles.yml
+
+- name: Enable and Start systemd-networkd
+  service:
+    name: systemd-networkd
+    enabled: yes
+    state: started
+  tags: "network"

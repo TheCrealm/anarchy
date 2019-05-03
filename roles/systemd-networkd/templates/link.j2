@@ -1,0 +1,13 @@
+#{{ ansible_managed }}
+
+[Match]
+Name={{ item.interface }}
+
+[Link]
+{% if item.mtu is defined %}
+MTUBytes={{ item.1.mtu }}
+{% endif %}
+
+{% for key, value in systemd_networkd_link.items() %}
+{{ key }}={{ value }}
+{% endfor %}
