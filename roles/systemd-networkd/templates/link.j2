@@ -1,13 +1,12 @@
 #{{ ansible_managed }}
 
 [Match]
-Name={{ item.interface }}
+Name={{ item.key }}
 
 [Link]
-{% if item.mtu is defined %}
-MTUBytes={{ item.1.mtu }}
+{% if item.value.mtu is defined %}
+MTUBytes={{ item.value.mtu }}
 {% endif %}
-
-{% for key, value in systemd_networkd_link.items() %}
+{% for key, value in item.value.items() %}
 {{ key }}={{ value }}
 {% endfor %}

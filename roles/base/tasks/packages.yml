@@ -34,7 +34,8 @@
     dest: /etc/systemd/system/paccache.timer
   notify:
     - reload systemd config
-    - restart paccache
+# TODO: Fix this
+#    - restart paccache
   tags:
     - packages
 
