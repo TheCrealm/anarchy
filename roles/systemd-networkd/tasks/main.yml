@@ -5,7 +5,35 @@
     state: present
   tags: "network"
 
-- include: profiles.yml
+- name: Create systemd-networkd directory
+  file:
+    path: /etc/systemd/network
+    state: directory
+  tags: "network"
+
+- name: Create network links
+  template:
+    src: "link.j2"
+    dest: "/etc/systemd/network/{{ item.key }}.link"
+    mode: 0644
+  with_dict: "{{ network.config.links }}"
+  tags: "network"
+
+- name: Create network netdevs
+  template:
+    src: "netdev.j2"
+    dest: "/etc/systemd/network/{{ item.key }}.netdev"
+    mode: 0644
+  with_dict: "{{ network.config.netdevs }}"
+  tags: "network"
+
+- name: Create networks 
+  template:
+    src: "network.j2"
+    dest: "/etc/systemd/network/{{ item.key }}.network"
+    mode: 0644
+  with_dict: "{{ network.config.networks }}"
+  tags: "network"
 
 - name: Enable and Start systemd-networkd
   service:

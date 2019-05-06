@@ -3,5 +3,6 @@
   pacman: 
     name: intel-ucode 
     state: present
-  notify:
-    - rebuild grub
+# TODO: Fix this.
+#  notify:
+#   - rebuild grub
