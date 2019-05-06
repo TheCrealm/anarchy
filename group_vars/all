@@ -28,16 +28,16 @@ gnupg:
   emulate_ssh: True
 
 editors:
-  - gvim
+  - code
+  - vim
 
 video_drivers:
   - libva-intel-driver
+  - nvidia
 
 base_packages:
   - base-devel
   - pacman-contrib
-  - fwupd
-  - dmidecode
   - tmux
   - git
   - rsync
@@ -46,24 +46,35 @@ base_packages:
   - moreutils
   - dateutils
   - bc
-  - ranger
-  - strace
+  - hunter
   - lsof
-  - sysstat
+  - htop
+  - iotop
   - arch-wiki-lite
   - arch-wiki-docs
   - python-keyring
   - python-secretstorage
-  - tig
-  - ruby
-  - pv
-  - minicom
   - jq
   - python-docs
   - python2-docs
   - screen
   - units
   - python-pipenv
+  - gimp
+  - keepassxc
+  - rdesktop
+  - scrot 
+  - thefuck
+  - unzip
+
+terminal_packages:
+  - alacritty
+  - rxvt-unicode
+
+development:
+  - asp
+  - devtools
+  - composer
 
 filesystem_packages:
   - dosfstools
@@ -74,6 +85,9 @@ browser_choices:
   - firefox -P default
   - firefox -P work
   - chromium
+
+mail_clients:
+  - thunderbird
 
 journal:
   max_size: 500M

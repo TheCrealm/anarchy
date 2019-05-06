@@ -19,3 +19,4 @@
     insertbefore: BOF
 
 - include: rofi.yml
+- include: compton.yml
