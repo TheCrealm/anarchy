@@ -46,7 +46,6 @@ base_packages:
   - moreutils
   - dateutils
   - bc
-  - hunter
   - lsof
   - htop
   - iotop

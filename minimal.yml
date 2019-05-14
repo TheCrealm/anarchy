@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - { role: base, tags: ['base'] }
+    - { role: cron, tags: ['cron'] }
+    - { role: microcode, tags: ['microcode'], when: "'GenuineIntel' in ansible_processor" }
+    - { role: ssh, tags: ['ssh'] }
+    - { role: x, tags: ['x'] }
+    - { role: sddm, tags: ['sddm'] }
+    - { role: i3, tags: ['i3'] }
+    - { role: editors, tags: ['editors'] }
+    - { role: filesystems, tags: ['filesystems'] }
+    - { role: archive, tags: ['archive'] }
+    - { role: udisks, tags: ['udisks'] }
+    - { role: browsers, tags: ['browsers'] }
+    - { role: office, tags: ['office'] }
+
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"
