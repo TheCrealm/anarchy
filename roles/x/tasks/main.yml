@@ -23,11 +23,3 @@
   pacman:
     name: "{{ video_drivers }}"
     state: present
-
-- name: Remap mouse buttons
-  template: 
-    src: 30-button_mapping.conf 
-    dest: /etc/X11/xorg.conf.d/30-button_mapping.conf
-  when: libinput.button_mapping is defined
-  tags:
-    - libinput

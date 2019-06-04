@@ -3,7 +3,6 @@
   pacman:
     name:
       - i3-gaps
-      - i3lock
     state: present
 
 - name: Verify that default applications file exists

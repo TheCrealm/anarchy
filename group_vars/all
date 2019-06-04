@@ -1,7 +1,7 @@
 base:
   sudo:
     enabled: True
-    group: edv
+    group: wheel
 
 network:
   type: networkd
@@ -23,57 +23,22 @@ ssh:
   user_key: /root/id_rsa
   enable_sshd: False
 
-gnupg:
-  enable_agent: True
-  emulate_ssh: True
-
 editors:
-  - code
   - vim
 
 video_drivers:
   - libva-intel-driver
-  - nvidia
 
 base_packages:
-  - base-devel
-  - pacman-contrib
-  - tmux
   - git
   - rsync
-  - glances
-  - coreutils
-  - moreutils
-  - dateutils
-  - bc
-  - lsof
   - htop
   - iotop
-  - arch-wiki-lite
-  - arch-wiki-docs
-  - python-keyring
-  - python-secretstorage
-  - jq
-  - python-docs
-  - python2-docs
   - screen
-  - units
-  - python-pipenv
-  - gimp
-  - keepassxc
-  - rdesktop
-  - scrot 
-  - thefuck
-  - unzip
+  - freerdp
 
 terminal_packages:
-  - alacritty
   - rxvt-unicode
-
-development:
-  - asp
-  - devtools
-  - composer
 
 filesystem_packages:
   - dosfstools
@@ -81,8 +46,7 @@ filesystem_packages:
   - exfat-utils
 
 browser_choices:
-  - firefox -P default
-  - firefox -P work
+  - firefox
   - chromium
 
 mail_clients:
@@ -94,10 +58,6 @@ journal:
 udisks:
   auto_mount: False
   shared_mount: True
-
-libinput:
-  middle_click_scroll: 12
-  button_mapping: "1 2 3 4 5 6 7 8 9 10 11 2"
 
 base_fonts:
   - cantarell-fonts
